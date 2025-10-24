@@ -1,0 +1,265 @@
+Base * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.fc {
+  border: none;
+}
+
+.fc .fc-daygrid-day-number {
+  color: #9aa4b2;
+  font-size: 13px;
+}
+
+.fc .fc-col-header-cell-cushion {
+  color: #9aa4b2;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+th .fc-scrollgrid-sync-inner {
+  background: #d6dadf;
+}
+
+/* Event Modal */
+.modal {
+  position: absolute;
+  z-index: 9999;
+  top: 401px;
+  left: 656px;
+  width: 201px;
+  height: 320px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 18px #00000029;
+  border: 1px solid #43425d;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+.modal-content {
+  position: relative;
+  padding: 0 10px;
+  margin-top: 20px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1rem;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 0.2s;
+  background: transparent;
+  z-index: 1000;
+  border-radius: 50%;
+  border: 2px solid #64748b;
+}
+
+.close-btn:hover {
+  color: #1f2937;
+}
+
+.input-group {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.input-field:focus {
+  border-color: #2196f3;
+  outline: none;
+}
+
+input {
+  width: 148px;
+  height: 19px;
+  outline: none;
+  border: none;
+  opacity: 1;
+  padding: 0.75rem 0;
+  text-align: left;
+  font: normal normal normal 15px/20px Source Sans Pro;
+  letter-spacing: 0px;
+  color: #43425d;
+}
+
+input:focus {
+  border-color: #3b82f6;
+}
+
+input::placeholder {
+  color: #94a3b8;
+  text-transform: lowercase;
+}
+
+.error {
+  font-size: 0.6rem;
+  color: #ef4444;
+  margin-top: -0.75rem;
+  margin-bottom: 0.75rem;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.modal-footer button {
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.modal-footer button:last-child {
+  color: #475569;
+}
+
+.modal-footer button:last-child:hover {
+  color: #1e293b;
+}
+
+.modal-footer button:first-child {
+  color: #ef4444;
+}
+
+.modal-footer button:first-child:hover {
+  color: #dc2626;
+}
+
+.color-picker {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.color-picker label {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.color-picker input[type="color"] {
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.color-picker input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-picker input[type="color"]::-webkit-color-swatch {
+  border-radius: 50%;
+  border: 1px solid #cbd5e1;
+}
+
+.color-picker .color-label {
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+@media (max-width: 400px) {
+  .modal-content {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .save-btn,
+  .cancel-btn,
+  .delete-btn {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* #endregion */
+
+/* Calendar */
+.calendar-content {
+  padding: 1.5rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.fc {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.fc-button-group .fc-button.fc-button-primary,
+.fc-toolbar-chunk .fc-button.fc-button-primary {
+  text-transform: capitalize;
+}
+
+.fc-button {
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  transition: background 0.2s ease;
+}
+
+.fc-button:hover {
+  background: #2563eb;
+}
+
+.fc-event {
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.fc-event:hover {
+  transform: scale(1.02);
+}
+
+.fc .fc-col-header-cell-cushion {
+  color: #9aa4b2;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* #endregion */

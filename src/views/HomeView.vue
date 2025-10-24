@@ -1,18 +1,26 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div class="home-page">
+    <h1>Calendar</h1>
+    <CalendarContent />
   </div>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from "vue-class-component";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+<script setup lang="ts">
+import { defineAsyncComponent } from "vue";
 
-@Options({
-  components: {
-    HelloWorld,
-  },
-})
-export default class HomeView extends Vue {}
+const CalendarContent = defineAsyncComponent(
+  () => import("../components/CalendarContent.vue")
+);
 </script>
+
+<style scoped>
+.home-page {
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+</style>
